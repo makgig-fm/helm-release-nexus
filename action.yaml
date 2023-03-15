@@ -22,7 +22,7 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   env:
-    CONTEXT_PATH: ${{ inputs.chart-path }}
+    CONTEXT_PATH: ${{ inputs.context-path }}
     REGISTRY_URL: ${{ inputs.registry-url }}
     REGISTRY_USERNAME: ${{ inputs.username }}
     REGISTRY_PASSWORD: ${{ inputs.password }}
