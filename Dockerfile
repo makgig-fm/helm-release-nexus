@@ -11,4 +11,6 @@ RUN set -ex \
 RUN apk add --virtual .helm-build-deps git make \
     && helm plugin install https://github.com/chartmuseum/helm-push.git --version v0.10.3 \
     && apk del --purge .helm-build-deps
+COPY entrypoint.sh /entrypoint.sh
+
 ENTRYPOINT ["/entrypoint.sh"] 
