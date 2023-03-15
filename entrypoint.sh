@@ -16,7 +16,7 @@ if [ "$REGISTRY_PASSWORD" ]; then
   REGISTRY_PASSWORD="--password ${REGISTRY_PASSWORD}"
 fi
 
-if [ "$CONTEXT_PATH"]; then
+if [ "$CONTEXT_PATH" ]; then
   echo "Helm use context path."
   CONTEXT_PATH="--context-path=$CONTEXT_PATH"
 fi
