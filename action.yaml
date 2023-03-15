@@ -2,7 +2,7 @@
 name: 'Helm Release Nexus'
 description: 'Pushes a local chart to Nexus helm repo. Supports context path.'
 branding:
-  icons: 'upload-cloud'
+  icon: 'upload-cloud'
   color: 'purple'
 inputs:
   username:
