@@ -16,14 +16,10 @@ if [ "$REGISTRY_PASSWORD" ]; then
   REGISTRY_PASSWORD="--password ${REGISTRY_PASSWORD}"
 fi
 
-if [ "$REGISTRY_APPVERSION" ]; then
-  echo "App version is defined, using as parameter."
-  REGISTRY_APPVERSION="--app-version ${REGISTRY_APPVERSION}"
-fi
-
 if [ "$CONTEXT_PATH"]; then
   echo "Helm use context path."
   CONTEXT_PATH="--context-path=$CONTEXT_PATH"
+fi
 
 helm lint .
 helm cm-push . ${REGISTRY_URL} ${REGISTRY_USERNAME} ${REGISTRY_PASSWORD} ${CONTEXT_PATH}
