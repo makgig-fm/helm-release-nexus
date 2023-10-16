@@ -32,6 +32,8 @@ else
 fi
 
 cd $DIR
+ls
+pwd
 helm lint .
 helm dependency build
 helm cm-push . ${REGISTRY_URL} ${REGISTRY_USERNAME} ${REGISTRY_PASSWORD} ${CONTEXT_PATH}
