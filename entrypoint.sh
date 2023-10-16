@@ -24,11 +24,8 @@ fi
 
 if [ -f "Chart.yaml" ]; then
   DIR=.
-elif [ -f ".helm/Chart.yaml" ]; then
-  DIR=./helm
 else
-  echo "Chart.yaml not found in current directory or .helm"
-  exit 1
+  DIR=./helm
 fi
 
 cd $DIR
