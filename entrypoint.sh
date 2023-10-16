@@ -21,5 +21,9 @@ if [ "$CONTEXT_PATH" ]; then
   CONTEXT_PATH="--context-path=$CONTEXT_PATH"
 fi
 
+helm repo add formind ${REGISTRY_URL} ${REGISTRY_USERNAME} ${REGISTRY_PASSWORD} ${CONTEXT_PATH}
+helm repo update
+cd ./helm
 helm lint .
+helm dependency build
 helm cm-push . ${REGISTRY_URL} ${REGISTRY_USERNAME} ${REGISTRY_PASSWORD} ${CONTEXT_PATH}
