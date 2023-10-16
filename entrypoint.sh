@@ -21,7 +21,17 @@ if [ "$CONTEXT_PATH" ]; then
   CONTEXT_PATH="--context-path=$CONTEXT_PATH"
 fi
 
-pwd && ls
+
+if [ -f "Chart.yaml" ]; then
+  DIR=.
+elif [ -f ".helm/Chart.yaml" ]; then
+  DIR=./helm
+else
+  echo "Chart.yaml not found in current directory or .helm"
+  exit 1
+fi
+
+cd $DIR
 helm lint .
 helm dependency build
 helm cm-push . ${REGISTRY_URL} ${REGISTRY_USERNAME} ${REGISTRY_PASSWORD} ${CONTEXT_PATH}
