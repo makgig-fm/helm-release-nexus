@@ -26,4 +26,4 @@ helm repo update
 cd ./helm
 helm lint .
 helm dependency build
-helm cm-push . ${REGISTRY_URL} ${REGISTRY_USERNAME} ${REGISTRY_PASSWORD} ${CONTEXT_PATH}
+helm cm-push . formind ${CONTEXT_PATH}
